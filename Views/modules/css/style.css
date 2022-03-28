@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{ 
+    height: 100vh;
+    margin: 0;
+    display:flex;
+    background: #efefee; 
+    flex-direction:column; 
+} 
+
+nav{
+    width: 100%;   
+    height: 80px;
+    padding: 10px;  
+    font-size: 1.8rem;
+    color: black;
+    background-color: #ddd;  
+
+    position: absolute;
+    z-index: 1;
+    
+    
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 0.5fr 1fr;        
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-container{
+    margin-left: 20%;
+}
+
+.text-container{
+    width: 200px;   
+    font-size: 1.7rem;
+}
+
+.text-container a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+.search-bar-container{
+    margin-left: -35px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container input{
+   border: none;
+   border-radius: 100px;
+   padding: 10px;
+   height: 2.5rem;
+}
+
+.search-bar-container i{
+   margin-left: -30px;
+ }
+
+main{
+    width: 100%;    
+    position: relative;
+    top: 80px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    background-color: #efefee;
+}
+
+footer{
+    width: 100%;
+    min-height: 80px;
+    background-color: #ddd;
+    margin-top: auto;
+    position: relative;          
+    display: flex;    
+    justify-content: center;    
+    align-items: center;   
+}
