@@ -24,6 +24,7 @@
                     <div class="card-title">
                         <?=$noticias->titulo?>
                     </div>
+                    <hr width="100%">
                     <div class="card-content">
                         <?=$noticias->conteudo?>
                     </div>

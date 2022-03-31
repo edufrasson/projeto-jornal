@@ -14,6 +14,12 @@
     column-gap: 50px;
     row-gap: 50px;    
 }
+hr{
+    margin-bottom: 20px;
+    background-color: #ddd;
+    border: none;
+    height: 5px;
+}
 
 .card{
     width: 250px;
