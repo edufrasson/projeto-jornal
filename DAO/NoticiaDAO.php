@@ -24,12 +24,27 @@ class NoticiaDAO{
         $sql = 'SELECT * FROM noticia';
 
         $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();       
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);    
+    }
+
+    public function getByID($id){
+        $sql = 'SELECT * FROM noticia WHERE id = ?';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        while($noticia = $stmt->fetchObject())
-            $array_noticias[] = $noticia;
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
 
-        return $array_noticias;    
+    public function delete($id){
+        $sql = 'DELETE FROM noticia WHERE id = ?';
+        
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();        
     }
 
 }

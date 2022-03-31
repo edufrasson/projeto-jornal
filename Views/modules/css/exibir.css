@@ -63,3 +63,12 @@
     font-weight: bold;
     color: black;    
 }
+
+.card-delete{
+    text-align: right;
+}
+
+.card-delete a, i{
+    font-size: 15px;
+    color: red;
+}

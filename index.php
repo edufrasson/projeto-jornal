@@ -6,7 +6,7 @@ include 'Controller/NoticiaController.php';
 
 switch($url_parse){
     case '/home':
-        include 'Views/modules/Noticia/ExibirNoticia.php';
+        NoticiaController::index();
     break;
     
     case '/form':
@@ -15,6 +15,10 @@ switch($url_parse){
 
     case '/salvar':
         NoticiaController::save();
+    break;
+    
+    case '/deletar':
+        NoticiaController::deletar();
     break;    
     
     default:

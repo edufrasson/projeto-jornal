@@ -1,13 +1,3 @@
-<?php 
-
-    include 'DAO/NoticiaDAO.php';
-
-    $noticias = new NoticiaDAO();
-
-    $lista_noticias = $noticias->getAllRows();
-    $total_noticias = count($lista_noticias);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,21 +19,26 @@
     <main>
         <section class="container">
             <div class="container-noticias">
-              <?php for($i=0;$i<$total_noticias;$i++): ?>  
+              <?php foreach($dados_noticia as $noticias): ?>  
                 <div class="card">
                     <div class="card-title">
-                        <?=$lista_noticias[$i]->titulo?>
+                        <?=$noticias->titulo?>
                     </div>
                     <div class="card-content">
-                        <?=$lista_noticias[$i]->conteudo?>
+                        <?=$noticias->conteudo?>
                     </div>
                     <div class="card-link">
                         <div class="card-link-container">
-                            <a href="">Acessar</a>
+                            <a href="">Acessar</a>                            
                         </div>                        
                     </div>
+                    <div class="card-delete">
+                        <a href="/deletar?id=<?= $noticias->id?>">
+                            <i class='bx bxs-trash-alt'></i>                            
+                        </a>
+                    </div>
                 </div>
-                <?php endfor?>                    
+                <?php endforeach?>                    
             </div>
         </section>
     </main>
