@@ -49,4 +49,11 @@ class NoticiaModel{
 
         $dao->delete($id);
     }
+
+    public function buscar($dados_busca){
+        include 'DAO/NoticiaDAO.php';
+        $dao = new NoticiaDAO();
+
+        return $dao->buscar($dados_busca);
+    }
 }

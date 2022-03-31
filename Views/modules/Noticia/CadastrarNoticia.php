@@ -14,7 +14,7 @@
 <body>
     <header>
        <?php 
-            include 'Views/modules/includes/header.php'
+            include 'Views/modules/includes/header_cadastro.php'
        ?>
     </header>
 
@@ -22,15 +22,15 @@
        <section>
            <form action="/salvar" method="post">
                 <label for="titulo">Titulo: </label><br>
-                <input type="text" name="titulo" id="titulo">
+                <input type="text" name="titulo" id="titulo" required>
                 <br><br>
                  
                 <label for="categoria">Categoria: </label><br>
-                <input type="text" name="categoria" id="categoria">
+                <input type="text" name="categoria" id="categoria" required>
                 <br><br>
 
                 <label for="conteudo">Conteudo: </label><br>
-                <textarea name="conteudo" id="conteudo"></textarea>
+                <textarea name="conteudo" id="conteudo" required></textarea>
                 <br><br><br>
 
                 <div class="container-button">

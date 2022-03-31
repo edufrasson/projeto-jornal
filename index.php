@@ -19,6 +19,10 @@ switch($url_parse){
     
     case '/deletar':
         NoticiaController::deletar();
+    break;
+    
+    case '/buscar':
+        NoticiaController::buscar();
     break;    
     
     default:

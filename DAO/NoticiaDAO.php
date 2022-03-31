@@ -47,4 +47,28 @@ class NoticiaDAO{
         $stmt->execute();        
     }
 
+    public function buscar($dados_busca){
+
+       $dados = "%" . $dados_busca . "%";
+        
+        $sql = 'SELECT n.id as id_noticia,
+                       n.titulo as titulo_noticia,
+                       n.conteudo as conteudo_noticia,
+                       c.nome as categoria_noticia   
+                FROM noticia n 
+                JOIN categoria_noticia c on c.id = n.id_categoria
+                WHERE n.titulo  LIKE ? or n.conteudo  LIKE  ?  or c.nome LIKE  ?            
+        ';
+
+        $stmt = $this->conexao->prepare($sql);  
+        $stmt->bindValue(1, $dados);
+        $stmt->bindValue(2, $dados);
+        $stmt->bindValue(3, $dados);
+         
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
+
 }

@@ -11,7 +11,12 @@
     </div>
 
     <div class="search-bar-container">
-        <input type="text"></input>
-        <i class='bx bx-search' ></i>                
+        <form action="/buscar" method="GET">
+            <input type="text" name="query"></input>
+            <button type="submit" style="display: none;">                
+            </button>
+            <i class='bx bx-search' ></i>
+        </form>
+                       
     </div>
 </nav>

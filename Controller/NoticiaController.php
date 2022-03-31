@@ -49,4 +49,16 @@ class NoticiaController{
 
         header("Location: /home");
     }
+
+    public static function buscar(){
+        include 'Model/NoticiaModel.php';
+        $model = new NoticiaModel();          
+        
+        $query = $_GET['query'];
+
+        $dados_noticia = $model->buscar($query);                     
+        
+        include 'Views/modules/Noticia/ExibirBuscaNoticia.php';
+        
+    }
 }
