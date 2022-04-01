@@ -18,7 +18,7 @@
 
     <main>
         <section class="container">
-            <div class="container-noticias">
+            <div class="container-noticias">           
               <?php foreach($dados_noticia as $noticias): ?>  
                 <div class="card">
                     <div class="card-title">

@@ -25,7 +25,7 @@ class NoticiaController{
 
         $model = new NoticiaModel();
 
-        $dados_noticia = $model->getAll();
+        $dados_noticia = $model->getAll();       
 
         include 'Views/modules/Noticia/ExibirNoticia.php';
     }

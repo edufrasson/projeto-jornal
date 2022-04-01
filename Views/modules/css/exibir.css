@@ -21,6 +21,16 @@ hr{
     height: 5px;
 }
 
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form i{
+    color: black
+}
+
 .card{
     width: 250px;
     height: 300px;

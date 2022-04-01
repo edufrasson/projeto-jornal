@@ -4,7 +4,7 @@
     </div>
 
     <div class="text-container">
-        <a href="/form">Cadastrar Noticias</a>                
+        <a href="/form">Cadastro Noticias</a>                
     </div>
     <div class="text-container">
         <a href="/home">Exibir Noticias</a>
