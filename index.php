@@ -10,7 +10,7 @@ switch($url_parse){
     break;
     
     case '/form':
-        include 'Views/modules/Noticia/CadastrarNoticia.php';
+        NoticiaController::form();
     break;
 
     case '/salvar':
@@ -26,6 +26,6 @@ switch($url_parse){
     break;    
     
     default:
-        include 'Views/modules/Noticia/ExibirNoticia.php';
+        NoticiaController::index();
     break;
 }

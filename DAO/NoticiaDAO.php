@@ -51,9 +51,9 @@ class NoticiaDAO{
 
        $dados = "%" . $dados_busca . "%";
         
-        $sql = 'SELECT n.id as id_noticia,
-                       n.titulo as titulo_noticia,
-                       n.conteudo as conteudo_noticia,
+        $sql = 'SELECT n.id as id,
+                       n.titulo as titulo,
+                       n.conteudo as conteudo,
                        c.nome as categoria_noticia   
                 FROM noticia n 
                 JOIN categoria_noticia c on c.id = n.id_categoria

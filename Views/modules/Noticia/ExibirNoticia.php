@@ -19,26 +19,26 @@
     <main>
         <section class="container">
             <div class="container-noticias">           
-              <?php foreach($dados_noticia as $noticias): ?>  
-                <div class="card">
-                    <div class="card-title">
-                        <?=$noticias->titulo?>
+                <?php foreach($dados_noticia as $noticias): ?>  
+                    <div class="card">
+                        <div class="card-title">
+                            <?=$noticias->titulo?>
+                        </div>
+                        <hr width="100%">
+                        <div class="card-content">
+                            <?=$noticias->conteudo?>
+                        </div>
+                        <div class="card-link">
+                            <div class="card-link-container">
+                                <a href="">Acessar</a>                            
+                            </div>                        
+                        </div>
+                        <div class="card-delete">
+                            <a href="/deletar?id=<?= $noticias->id?>">
+                                <i class='bx bxs-trash-alt'></i>                            
+                            </a>
+                        </div>
                     </div>
-                    <hr width="100%">
-                    <div class="card-content">
-                        <?=$noticias->conteudo?>
-                    </div>
-                    <div class="card-link">
-                        <div class="card-link-container">
-                            <a href="">Acessar</a>                            
-                        </div>                        
-                    </div>
-                    <div class="card-delete">
-                        <a href="/deletar?id=<?= $noticias->id?>">
-                            <i class='bx bxs-trash-alt'></i>                            
-                        </a>
-                    </div>
-                </div>
                 <?php endforeach?>                    
             </div>
         </section>

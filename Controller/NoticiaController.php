@@ -1,6 +1,10 @@
 <?php
 
 class NoticiaController{
+    public static function form(){
+        include 'Views/modules/Noticia/CadastrarNoticia.php';
+    }
+
     public static function save(){
         include 'Model/NoticiaModel.php';            
     
@@ -58,7 +62,7 @@ class NoticiaController{
 
         $dados_noticia = $model->buscar($query);                     
         
-        include 'Views/modules/Noticia/ExibirBuscaNoticia.php';
+        include 'Views/modules/Noticia/ExibirNoticia.php';
         
     }
 }

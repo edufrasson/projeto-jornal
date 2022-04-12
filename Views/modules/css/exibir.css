@@ -6,7 +6,7 @@
     background-color: #efefee;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;   
     flex-direction: row;
     flex-wrap: wrap;
@@ -32,6 +32,8 @@ form i{
 }
 
 .card{
+    min-width: 250px;
+    min-height: 300px;
     width: 250px;
     height: 300px;
     background-color: white;   
@@ -39,7 +41,7 @@ form i{
     
     flex-direction: column;    
     
-    padding: 15px; 
+    padding: 15px;     
 }
 
 .card-title{
