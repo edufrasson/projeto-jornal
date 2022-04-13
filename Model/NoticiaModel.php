@@ -11,7 +11,13 @@ class NoticiaModel{
         include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
-        $dao->insert($this);
+        if($this->id == null){
+            $dao->insert($this);
+        }            
+        else{
+            $dao->update($this);
+        }
+                
     }
 
     public function getAll(){

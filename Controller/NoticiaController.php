@@ -18,6 +18,12 @@ class NoticiaController{
         $model->id_categoria = $id_categoria->id;
         $model->titulo = $_POST['titulo'];
         $model->conteudo = $_POST['conteudo'];
+        
+        if (isset($_POST['id'])){
+            $model->id = $_POST['id'];    
+        }else{
+            $model->id = null;
+        }
 
         $model->save();
 
@@ -37,11 +43,13 @@ class NoticiaController{
     public static function ver(){
         include 'Model/NoticiaModel.php';
 
+        $model = new NoticiaModel();
+
         $id = $_GET['id'];
 
-        $dados_noticia = $model->getByID($id);
+        $dados_noticia = $model->getByID($id); 
 
-        include 'Views/modules/Noticia/VerNoticia.php';
+        include 'Views/modules/Noticia/CadastrarNoticia.php';
     }
 
     public static function deletar(){

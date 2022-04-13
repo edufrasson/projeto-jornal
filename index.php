@@ -23,6 +23,10 @@ switch($url_parse){
     
     case '/buscar':
         NoticiaController::buscar();
+    break;
+    
+    case '/ver':
+        NoticiaController::ver();
     break;    
     
     default:

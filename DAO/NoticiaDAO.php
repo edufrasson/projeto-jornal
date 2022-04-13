@@ -30,13 +30,19 @@ class NoticiaDAO{
     }
 
     public function getByID($id){
-        $sql = 'SELECT * FROM noticia WHERE id = ?';
+        $sql = 'SELECT n.id as id,
+                       n.titulo as titulo,
+                       n.conteudo as conteudo,
+                       cn.nome as categoria         
+        FROM noticia n
+        JOIN categoria_noticia cn on cn.id = n.id_categoria 
+        WHERE n.id = ?';
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        return $stmt->fetchObject();
     }
 
     public function delete($id){
@@ -70,5 +76,19 @@ class NoticiaDAO{
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function update(NoticiaModel $model){
+        try{
+            $sql = 'UPDATE noticia SET titulo = ?, id_categoria = ?, conteudo = ? WHERE id = ?';
 
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $model->titulo);
+            $stmt->bindValue(2, $model->id_categoria);
+            $stmt->bindValue(3, $model->conteudo);
+            $stmt->bindValue(4, $model->id);
+            $stmt->execute();
+        }catch(Exception $e){
+            throw new Exception('Não foi possível atualizar a noticia.');
+        }
+        
+    }
 }

@@ -30,7 +30,7 @@
                         </div>
                         <div class="card-link">
                             <div class="card-link-container">
-                                <a href="">Acessar</a>                            
+                                <a href="/ver?id=<?= $noticias->id?>">Editar</a>                            
                             </div>                        
                         </div>
                         <div class="card-delete">
