@@ -8,7 +8,6 @@ class NoticiaModel{
     public $categoria;
 
     public function save(){
-        include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
         if($this->id == null){
@@ -21,14 +20,12 @@ class NoticiaModel{
     }
 
     public function getAll(){
-        include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
         return $dao->getAllRows();
     }
 
-    public function checkCategory($nome_categoria){
-        include 'DAO/CategoriaDAO.php';
+    public function checkCategory($nome_categoria){        
 
         $categoria_dao = new CategoriaDAO();
         $qnt_linhas = $categoria_dao->checkCategory($nome_categoria);
@@ -43,21 +40,18 @@ class NoticiaModel{
     }    
 
     public function getByID($id){
-        include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
         return $dao->getByID((int)$id);
     }
 
     public function deletar($id){       
-        include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
         $dao->delete($id);
     }
 
     public function buscar($dados_busca){
-        include 'DAO/NoticiaDAO.php';
         $dao = new NoticiaDAO();
 
         return $dao->buscar($dados_busca);

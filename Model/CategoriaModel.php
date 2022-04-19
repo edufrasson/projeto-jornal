@@ -3,8 +3,7 @@
 class CategoriaModel{
     public $nome;
 
-    function save(){
-        include 'DAO/CategoriaDAO.php';
+    function save(){        
         $dao = new CategoriaDAO;
     }
 }

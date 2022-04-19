@@ -2,7 +2,9 @@
 
 $url_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-include 'Controller/NoticiaController.php';
+include 'Autoload.php';
+
+
 
 switch($url_parse){
     case '/home':

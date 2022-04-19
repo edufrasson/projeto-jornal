@@ -5,8 +5,7 @@ class NoticiaController{
         include 'Views/modules/Noticia/CadastrarNoticia.php';
     }
 
-    public static function save(){
-        include 'Model/NoticiaModel.php';            
+    public static function save(){                  
     
         $model = new NoticiaModel();
 
@@ -30,8 +29,7 @@ class NoticiaController{
         header("Location: /form");
     }
 
-    public static function index(){
-        include 'Model/NoticiaModel.php';
+    public static function index(){       
 
         $model = new NoticiaModel();
 
@@ -40,8 +38,7 @@ class NoticiaController{
         include 'Views/modules/Noticia/ExibirNoticia.php';
     }
 
-    public static function ver(){
-        include 'Model/NoticiaModel.php';
+    public static function ver(){        
 
         $model = new NoticiaModel();
 
@@ -52,8 +49,7 @@ class NoticiaController{
         include 'Views/modules/Noticia/CadastrarNoticia.php';
     }
 
-    public static function deletar(){
-        include 'Model/NoticiaModel.php';
+    public static function deletar(){        
         
         $model = new NoticiaModel();    
         
@@ -63,7 +59,7 @@ class NoticiaController{
     }
 
     public static function buscar(){
-        include 'Model/NoticiaModel.php';
+        
         $model = new NoticiaModel();          
         
         $query = $_GET['query'];
