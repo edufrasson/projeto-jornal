@@ -9,14 +9,16 @@ class NoticiaModel{
 
     public function save(){
         $dao = new NoticiaDAO();
-
-        if($this->id == null){
-            $dao->insert($this);
-        }            
-        else{
-            $dao->update($this);
-        }
-                
+        try{
+            if($this->id == null){
+                $dao->insert($this);
+            }            
+            else{
+                $dao->update($this);
+            }
+        }catch(Exception $e){
+            echo 'Não foi possível salvar a notícia, erro: ' . $e->getMessage();
+        }                     
     }
 
     public function getAll(){
@@ -25,18 +27,21 @@ class NoticiaModel{
         return $dao->getAllRows();
     }
 
-    public function checkCategory($nome_categoria){        
+    public function checkCategory($nome_categoria){       
+        try{
+            $categoria_dao = new CategoriaDAO();
+            $qnt_linhas = $categoria_dao->checkCategory($nome_categoria);
+            if($qnt_linhas == 0){             
+                $categoria_dao->insert($nome_categoria);
+                $id_categoria = $categoria_dao->checkID($nome_categoria);
+            }else{
+                $id_categoria = $categoria_dao->checkID($nome_categoria);            
+            }
 
-        $categoria_dao = new CategoriaDAO();
-        $qnt_linhas = $categoria_dao->checkCategory($nome_categoria);
-        if($qnt_linhas == 0){             
-            $categoria_dao->insert($nome_categoria);
-            $id_categoria = $categoria_dao->checkID($nome_categoria);
-        }else{
-            $id_categoria = $categoria_dao->checkID($nome_categoria);            
-        }
-
-        return $id_categoria;
+            return $id_categoria;
+        }catch(Exception $e){
+            echo 'Não foi possivel checar a categoria, erro: ' . $e->getMessage();
+        }        
     }    
 
     public function getByID($id){
