@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controller;
+
+use App\Model\NoticiaModel;
+use FFI\Exception;
+
 class NoticiaController{
     public static function form(){
         include 'Views/modules/Noticia/CadastrarNoticia.php';

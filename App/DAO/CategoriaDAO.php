@@ -1,5 +1,9 @@
 <?php
 
+namespace App\DAO;
+use \FFI\Exception;
+
+
 class CategoriaDAO{
     public $conexao;
 

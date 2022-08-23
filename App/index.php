@@ -1,10 +1,10 @@
 <?php
 
+use App\Controller\NoticiaController;
+
 $url_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 include 'Autoload.php';
-
-
 
 switch($url_parse){
     case '/home':

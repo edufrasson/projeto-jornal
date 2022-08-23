@@ -1,9 +1,13 @@
 <?php
 
+namespace App\DAO;
+use \PDO;
+
+
 class MySQL extends PDO{
-    private $dsn = 'mysql:host=localhost;dbname=db_jornal';
+    private $dsn = 'mysql:host=localhost:3307;dbname=db_jornal';
     private $user = 'root';
-    private $pass = 'Eduardo@mysql';
+    private $pass = 'etecjau';
 
     public function __construct()
     {

@@ -1,5 +1,12 @@
 <?php
 
+namespace App\Model;
+
+use App\DAO\NoticiaDAO;
+use App\DAO\CategoriaDAO;
+use FFI\Exception;
+
+
 class NoticiaModel{
     public $id, $titulo, $conteudo, $id_categoria;
 

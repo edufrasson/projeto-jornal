@@ -1,5 +1,12 @@
 <?php
 
+namespace App\DAO;
+
+use App\DAO\MySQL;
+use App\Model\NoticiaModel;
+use FFI\Exception;
+use \PDO;
+
 class NoticiaDAO{
     public $conexao;
 
