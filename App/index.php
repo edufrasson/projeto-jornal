@@ -1,37 +1,5 @@
 <?php
 
-use App\Controller\NoticiaController;
-
-$url_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+include 'config.php';
 include 'Autoload.php';
-
-switch($url_parse){
-    case '/home':
-        NoticiaController::index();
-    break;
-    
-    case '/form':
-        NoticiaController::form();
-    break;
-
-    case '/salvar':
-        NoticiaController::save();
-    break;
-    
-    case '/deletar':
-        NoticiaController::deletar();
-    break;
-    
-    case '/buscar':
-        NoticiaController::buscar();
-    break;
-    
-    case '/ver':
-        NoticiaController::ver();
-    break;    
-    
-    default:
-        NoticiaController::index();
-    break;
-}
+include 'rotas.php';

@@ -7,14 +7,13 @@ use App\Model\NoticiaModel;
 use FFI\Exception;
 use \PDO;
 
-class NoticiaDAO{
+class NoticiaDAO extends DAO{
     public $conexao;
 
     public function __construct()
     {
-        try{
-            include_once 'MySQL.php';
-            $this->conexao = new MySQL();
+        try{            
+           return parent::__construct();
         }catch(Exception $e){
             echo 'Não foi possível conectar ao banco de dados, erro: ' . $e->getMessage();
         }        

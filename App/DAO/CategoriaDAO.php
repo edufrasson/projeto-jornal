@@ -4,14 +4,13 @@ namespace App\DAO;
 use \FFI\Exception;
 
 
-class CategoriaDAO{
+class CategoriaDAO extends DAO{
     public $conexao;
 
     public function __construct()
     {
-        try{
-            include_once 'MySQL.php';
-            $this->conexao = new MySQL();
+        try{            
+            return parent::__construct();
         }catch(Exception $e){
             echo 'Não foi possível conectar ao banco de dados, erro: ' . $e->getMessage();
         }        

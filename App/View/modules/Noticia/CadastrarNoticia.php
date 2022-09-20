@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="Views/modules/css/form.css">
+    <link rel="stylesheet" href="View/modules/css/form.css">
     <?php 
-        include 'Views/modules/includes/css_config.php';
+        include 'View/modules/includes/css_config.php';
     ?>
     
     <title>Cadastrar Noticia</title>
@@ -14,7 +14,7 @@
 <body>
     <header>
        <?php 
-            include 'Views/modules/includes/header_cadastro.php';
+            include 'View/modules/includes/header_cadastro.php';
        ?>
     </header>
 
@@ -47,7 +47,7 @@
 
     <footer>
         <?php 
-            include 'Views/modules/includes/footer.php'
+            include 'View/modules/includes/footer.php'
        ?>
     </footer>
 </body>

@@ -5,9 +5,9 @@ namespace App\Controller;
 use App\Model\NoticiaModel;
 use FFI\Exception;
 
-class NoticiaController{
+class NoticiaController extends Controller{
     public static function form(){
-        include 'Views/modules/Noticia/CadastrarNoticia.php';
+        parent::render("Noticia/CadastrarNoticia");        
     }
 
     public static function save(){                  
@@ -46,7 +46,7 @@ class NoticiaController{
 
             $dados_noticia = $model->getAll();       
     
-            include 'Views/modules/Noticia/ExibirNoticia.php';
+            parent::render("Noticia/ExibirNoticia", $dados_noticia);
             
         }catch(Exception $e){
             echo 'Erro: ' . $e->getMessage();
@@ -61,7 +61,7 @@ class NoticiaController{
         if(isset($_GET['id'])){            
             $dados_noticia = $model->getByID($_GET['id']);
 
-            include 'Views/modules/Noticia/CadastrarNoticia.php';
+            parent::render("Noticia/CadastrarNoticia", $dados_noticia);
         }else{
             echo 'Não foi possível editar a notícia.';
         }       
@@ -85,7 +85,7 @@ class NoticiaController{
         
         if(isset($_GET['query'])){
             $dados_noticia = $model->buscar($_GET['query']);
-            include 'Views/modules/Noticia/ExibirNoticia.php';
+            parent::render("Noticia/ExibirNoticia", $dados_noticia);
         }else
             echo '<script>alert(Erro ao buscar a notícia.)</script>';    
     }

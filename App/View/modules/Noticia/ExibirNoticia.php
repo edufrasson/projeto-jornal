@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Views/modules/css/style.css">
-    <link rel="stylesheet" href="Views/modules/css/exibir.css">
+    <link rel="stylesheet" href="View/modules/css/style.css">
+    <link rel="stylesheet" href="View/modules/css/exibir.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Exibir Noticia</title>
 </head>
 <body>
     <header>
        <?php 
-            include 'Views/modules/includes/header.php'
+            include 'View/modules/includes/header.php'
        ?>
     </header>
 
     <main>
         <section class="container">
             <div class="container-noticias">           
-                <?php foreach($dados_noticia as $noticias): ?>  
+                <?php foreach($model as $noticias): ?>  
                     <div class="card">
                         <div class="card-title">
                             <?=$noticias->titulo?>
@@ -46,7 +46,7 @@
 
     <footer>
         <?php 
-            include 'Views/modules/includes/footer.php'
+            include 'View/modules/includes/footer.php'
        ?>
     </footer>
 </body>

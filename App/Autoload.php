@@ -2,10 +2,10 @@
 
 spl_autoload_register(function($class){
 
-    $arquivo_classe = dirname(__FILE__, 2) . '/' . $class . ".php";   
+    $arquivo = BASEDIR . '/' . $class. '.php'; 
 
-    if(file_exists($arquivo_classe))
-        include $arquivo_classe;
+    if(file_exists($arquivo))
+        include $arquivo;
     else
-        echo "Aquivo não encontrado: " . $arquivo_classe;    
+        echo "Aquivo não encontrado: " . $arquivo;    
 });
