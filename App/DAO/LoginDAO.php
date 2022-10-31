@@ -3,6 +3,7 @@
 namespace App\DAO;
 use App\Model\LoginModel;
 use FFI\Exception;
+use PDO;
 
 class LoginDAO extends DAO{
     public function __construct()
@@ -24,6 +25,19 @@ class LoginDAO extends DAO{
         }catch(Exception $e){
             echo 'Não foi possível cadastrar o usuario, erro: ' . $e->getMessage();
         }        
+    }
+
+    public function select(){
+        try{
+            $sql = 'SELECT * FROM usuario';
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->execute();       
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }catch(Exception $e){
+            echo 'Não foi possível listar os usuarios, erro: ' . $e->getMessage();
+        }     
     }
 
     public function selectByEmailAndSenha($email, $senha)

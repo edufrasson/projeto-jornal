@@ -10,6 +10,14 @@ class LoginController extends Controller{
         parent::render('Login/Login');
     }
 
+    public static function view(){
+        $model = new LoginModel();
+        
+        $model->getAll();
+
+        include 'View/modules/Login/ListarUsuario.php';
+    }
+
     public static function form(){
         parent::render('Login/FormUsuario');
     }

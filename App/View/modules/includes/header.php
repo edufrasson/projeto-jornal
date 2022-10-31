@@ -9,6 +9,9 @@
     <div class="text-container ">
         <a href="/home">Exibir Noticias</a>
     </div>  
+    <div class="text-container ">
+        <a href="/login/view">Exibir Usuarios</a>
+    </div> 
 
     <div class="search-bar-container">
         <form action="/buscar" method="GET">

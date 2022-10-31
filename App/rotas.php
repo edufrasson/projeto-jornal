@@ -13,6 +13,10 @@ switch($url_parse){
         LoginController::index();
     break;
 
+    case '/login/view':
+        LoginController::view();
+    break;
+
     case '/login/save':
         LoginController::save();
     break;
