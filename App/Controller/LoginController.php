@@ -2,11 +2,35 @@
 
 namespace App\Controller;
 use App\Model\LoginModel;
+use FFI\Exception;
 
 class LoginController extends Controller{
 
     public static function index(){
         parent::render('Login/Login');
+    }
+
+    public static function form(){
+        parent::render('Login/FormUsuario');
+    }
+
+    public static function save(){                  
+        try{
+            $model = new LoginModel(); 
+
+            $model->nome = $_POST['nome'];
+            $model->email = $_POST['email'];
+            $model->senha = $_POST['senha'];
+            
+          
+            $model->save();
+
+            header("Location: /form");
+
+        }catch(Exception $e){
+            echo 'Erro: ' . $e->getMessage();
+        }
+        
     }
 
     public static function auth(){

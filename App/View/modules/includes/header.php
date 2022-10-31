@@ -6,9 +6,9 @@
     <div class="text-container">
         <a href="/form">Cadastro Noticias</a>                
     </div>
-    <div class="text-container">
+    <div class="text-container ">
         <a href="/home">Exibir Noticias</a>
-    </div>
+    </div>  
 
     <div class="search-bar-container">
         <form action="/buscar" method="GET">
@@ -19,4 +19,11 @@
         </form>
                        
     </div>
+    
+    <div class="text-container logout">
+        <a class="logout" href="/logout">Logout</a>
+    </div>     
+        
+
+    
 </nav>

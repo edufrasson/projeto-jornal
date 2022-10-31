@@ -7,6 +7,7 @@ use FFI\Exception;
 
 class NoticiaController extends Controller{
     public static function form(){
+        parent::isAuthenticated();
         parent::render("Noticia/CadastrarNoticia");        
     }
 

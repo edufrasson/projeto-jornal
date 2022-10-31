@@ -1,15 +1,26 @@
 *{
-    font-size: 20px;
+    font-size: 1.8rem;
 }
 
-button{
-    font-size: 20px;
+
+html{
+    font-size: 62.5%;
 }
 
-input{
-    font-size: 30px;
+.btn{
+    font-size: 1.7rem;
+}
+
+.form-control{
+    font-size: 1.7rem ;
 }
 
 .container{
     width: 30%;
+}
+
+.container-login{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }

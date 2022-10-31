@@ -31,7 +31,7 @@ nav{
     
     
     display: grid;
-    grid-template-columns: 2fr 0.5fr 0.5fr 1fr;        
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr 0.5fr;        
     justify-content: space-around;
     align-items: center;
 }
@@ -43,6 +43,10 @@ nav{
 .text-container{
     width: 200px;   
     font-size: 1.7rem;
+}
+
+.logout a{
+    color: red !important;
 }
 
 .text-container a{
